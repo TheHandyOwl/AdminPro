@@ -1,7 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+//Routes
+import { APP_ROUTES } from './app.routes';
 
+//Our components
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { PagedidnotfoundComponent } from './shared/pagedidnotfound/pagedidnotfound.component';
@@ -26,7 +29,8 @@ import { BreadcrumbsComponent } from './shared/breadcrumbs/breadcrumbs.component
     BreadcrumbsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    APP_ROUTES
   ],
   providers: [],
   bootstrap: [AppComponent]
