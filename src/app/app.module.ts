@@ -14,6 +14,7 @@ import { Graphics1Component } from './pages/graphics1/graphics1.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { BreadcrumbsComponent } from './shared/breadcrumbs/breadcrumbs.component';
+import { PagesComponent } from './pages/pages.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { BreadcrumbsComponent } from './shared/breadcrumbs/breadcrumbs.component
     Graphics1Component,
     HeaderComponent,
     SidebarComponent,
-    BreadcrumbsComponent
+    BreadcrumbsComponent,
+    PagesComponent
   ],
   imports: [
     BrowserModule,
