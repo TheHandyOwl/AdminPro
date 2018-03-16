@@ -16,6 +16,8 @@ import { Graphics1Component } from './graphics1/graphics1.component';
 import { IncrementerComponent } from '../components/incrementer/incrementer.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { DonaGraphicsComponent } from '../components/dona-graphics/dona-graphics.component';
+import { PromiseComponent } from './promise/promise.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { DonaGraphicsComponent } from '../components/dona-graphics/dona-graphics
     Graphics1Component,
     IncrementerComponent,
     DonaGraphicsComponent,
-    AccountSettingsComponent
+    PromiseComponent,
+    AccountSettingsComponent,
+    RxjsComponent
   ],
   imports: [
     SharedModule,
