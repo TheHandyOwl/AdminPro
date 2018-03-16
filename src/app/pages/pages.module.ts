@@ -14,7 +14,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
 import { Graphics1Component } from './graphics1/graphics1.component';
 import { IncrementerComponent } from '../components/incrementer/incrementer.component';
-import { PolarGraphicsComponent } from '../components/polar-graphics/polar-graphics.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { DonaGraphicsComponent } from '../components/dona-graphics/dona-graphics.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { PolarGraphicsComponent } from '../components/polar-graphics/polar-graph
     ProgressComponent,
     Graphics1Component,
     IncrementerComponent,
-    PolarGraphicsComponent
+    DonaGraphicsComponent,
+    AccountSettingsComponent
   ],
   imports: [
     SharedModule,
