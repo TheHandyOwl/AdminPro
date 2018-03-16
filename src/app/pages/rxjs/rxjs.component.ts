@@ -12,7 +12,6 @@ export class RxjsComponent implements OnInit {
 
     this
     .returnObservable()
-    .retry( 2 )
     .subscribe(
       number =>  console.log('Subscribe', number ),
       error => console.log('Error', error),
@@ -24,7 +23,7 @@ export class RxjsComponent implements OnInit {
   ngOnInit() {
   }
 
-  returnObservable (): Observable<number> {
+  returnObservable (): Observable<any> {
     return new Observable( observer => {
 
       let counter = 0;
@@ -33,19 +32,21 @@ export class RxjsComponent implements OnInit {
 
         counter += 1;
 
-        observer.next( counter );
+        const exit = {
+          value : counter
+        };
+
+        observer.next( exit );
 
         if ( counter === 3 ) {
           clearInterval( interval );
           observer.complete();
         }
 
-        if ( counter === 2 ) {
-          // clearInterval( interval );
-          observer.error('Heeeeellllllllppppp');
-        }
-
       }, 1000);
+    }).retry( 2 )
+    .map( (response: any) => {
+      return response.value;
     });
   }
 
