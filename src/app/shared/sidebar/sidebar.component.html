@@ -13,76 +13,77 @@
                         <li><a href="javascript:void()">My Profile </a></li>
                         <li><a href="javascript:void()">My Balance</a></li>
                         <li><a href="javascript:void()">Inbox</a></li>
-                        <li><a href="javascript:void()">Account Setting</a></li>
-                        <li><a href="javascript:void()">Logout</a></li>
+                        <li><a routerLinkActive="active" routerLink="/account-settings">Account Setting</a></li>
+                        <li><a routerLink="/login">Logout</a></li>
                     </ul>
                 </li>
-                <li class="nav-devider"></li>
-                <li class="nav-small-cap">PERSONAL</li>
-                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard <span class="label label-rouded label-themecolor pull-right">4</span></span></a>
-                    <ul aria-expanded="false" class="collapse">
-                        <li><a href="index.html">Minimal </a></li>
-                        <li><a href="index2.html">Analytical</a></li>
-                        <li><a href="index3.html">Demographical</a></li>
-                        <li><a href="index4.html">Modern</a></li>
+                <li class=" nav-devider "></li>
+                <li class="nav-small-cap ">PERSONAL</li>
+
+
+                <li *ngFor="let menu of _sidebar.menu ">
+                    <a class="has-arrow waves-effect waves-dark " aria-expanded="false "><i [class]="menu.icon "></i><span class="hide-menu "> {{ menu.title }} <span class="label label-rouded label-themecolor pull-right "> {{ menu.submenu.length }} </span></span></a>
+                    <ul aria-expanded="false " class="collapse ">
+                        <li *ngFor="let submenu of menu.submenu ">
+                            <a routerLinkActive [routerLink]="[ submenu.url ] "> {{ submenu.title }} </a></li>
                     </ul>
                 </li>
-                <!-- <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Apps</span></a>
-                    <ul aria-expanded="false" class="collapse">
-                        <li><a href="app-calendar.html">Calendar</a></li>
-                        <li><a href="app-chat.html">Chat app</a></li>
-                        <li><a href="app-ticket.html">Support Ticket</a></li>
-                        <li><a href="app-contact.html">Contact / Employee</a></li>
-                        <li><a href="app-contact2.html">Contact Grid</a></li>
-                        <li><a href="app-contact-detail.html">Contact Detail</a></li>
+                <!-- <li> <a class="has-arrow waves-effect waves-dark " href="# " aria-expanded="false "><i class="mdi mdi-bullseye "></i><span class="hide-menu ">Apps</span></a>
+                    <ul aria-expanded="false " class="collapse ">
+                        <li><a href="app-calendar.html ">Calendar</a></li>
+                        <li><a href="app-chat.html ">Chat app</a></li>
+                        <li><a href="app-ticket.html ">Support Ticket</a></li>
+                        <li><a href="app-contact.html ">Contact / Employee</a></li>
+                        <li><a href="app-contact2.html ">Contact Grid</a></li>
+                        <li><a href="app-contact-detail.html ">Contact Detail</a></li>
                     </ul>
                 </li> -->
-                <!-- <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-email"></i><span class="hide-menu">Inbox</span></a>
-                    <ul aria-expanded="false" class="collapse">
-                        <li><a href="app-email.html">Mailbox</a></li>
-                        <li><a href="app-email-detail.html">Mailbox Detail</a></li>
-                        <li><a href="app-compose.html">Compose Mail</a></li>
+                <!-- <li> <a class="has-arrow waves-effect waves-dark " href="# " aria-expanded="false "><i class="mdi mdi-email "></i><span class="hide-menu ">Inbox</span></a>
+                    <ul aria-expanded="false " class="collapse ">
+                        <li><a href="app-email.html ">Mailbox</a></li>
+                        <li><a href="app-email-detail.html ">Mailbox Detail</a></li>
+                        <li><a href="app-compose.html ">Compose Mail</a></li>
                     </ul>
                 </li> -->
-                <!-- <li class="nav-small-cap">FORMS, TABLE &amp; WIDGETS</li>
-                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-file"></i><span class="hide-menu">Forms</span></a>
-                    <ul aria-expanded="false" class="collapse">
-                        <li><a href="form-basic.html">Basic Forms</a></li>
-                        <li><a href="form-layout.html">Form Layouts</a></li>
-                        <li><a href="form-addons.html">Form Addons</a></li>
-                        <li><a href="form-material.html">Form Material</a></li>
-                        <li><a href="form-float-input.html">Floating Lable</a></li>
-                        <li><a href="form-pickers.html">Form Pickers</a></li>
-                        <li><a href="form-upload.html">File Upload</a></li>
-                        <li><a href="form-mask.html">Form Mask</a></li>
-                        <li><a href="form-validation.html">Form Validation</a></li>
-                        <li><a href="form-dropzone.html">File Dropzone</a></li>
-                        <li><a href="form-icheck.html">Icheck control</a></li>
-                        <li><a href="form-img-cropper.html">Image Cropper</a></li>
-                        <li><a href="form-bootstrapwysihtml5.html">HTML5 Editor</a></li>
-                        <li><a href="form-typehead.html">Form Typehead</a></li>
-                        <li><a href="form-wizard.html">Form Wizard</a></li>
-                        <li><a href="form-xeditable.html">Xeditable Editor</a></li>
-                        <li><a href="form-summernote.html">Summernote Editor</a></li>
-                        <li><a href="form-tinymce.html">Tinymce Editor</a></li>
+                <!-- <li class="nav-small-cap ">FORMS, TABLE &amp; WIDGETS</li>
+                <li> <a class="has-arrow waves-effect waves-dark " href="# " aria-expanded="false "><i class="mdi mdi-file "></i><span class="hide-menu ">Forms</span></a>
+                    <ul aria-expanded="false " class="collapse ">
+                        <li><a href="form-basic.html ">Basic Forms</a></li>
+                        <li><a href="form-layout.html ">Form Layouts</a></li>
+                        <li><a href="form-addons.html ">Form Addons</a></li>
+                        <li><a href="form-material.html ">Form Material</a></li>
+                        <li><a href="form-float-input.html ">Floating Lable</a></li>
+                        <li><a href="form-pickers.html ">Form Pickers</a></li>
+                        <li><a href="form-upload.html ">File Upload</a></li>
+                        <li><a href="form-mask.html ">Form Mask</a></li>
+                        <li><a href="form-validation.html ">Form Validation</a></li>
+                        <li><a href="form-dropzone.html ">File Dropzone</a></li>
+                        <li><a href="form-icheck.html ">Icheck control</a></li>
+                        <li><a href="form-img-cropper.html ">Image Cropper</a></li>
+                        <li><a href="form-bootstrapwysihtml5.html ">HTML5 Editor</a></li>
+                        <li><a href="form-typehead.html ">Form Typehead</a></li>
+                        <li><a href="form-wizard.html ">Form Wizard</a></li>
+                        <li><a href="form-xeditable.html ">Xeditable Editor</a></li>
+                        <li><a href="form-summernote.html ">Summernote Editor</a></li>
+                        <li><a href="form-tinymce.html ">Tinymce Editor</a></li>
                     </ul>
                 </li>
-                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-table"></i><span class="hide-menu">Tables</span></a>
-                    <ul aria-expanded="false" class="collapse">
-                        <li><a href="table-basic.html">Basic Tables</a></li>
-                        <li><a href="table-layout.html">Table Layouts</a></li>
-                        <li><a href="table-data-table.html">Data Tables</a></li>
-                        <li><a href="table-footable.html">Footable</a></li>
-                        <li><a href="table-jsgrid.html">Js Grid Table</a></li>
-                        <li><a href="table-responsive.html">Responsive Table</a></li>
-                        <li><a href="table-bootstrap.html">Bootstrap Tables</a></li>
-                        <li><a href="table-editable-table.html">Editable Table</a></li>
+                <li> <a class="has-arrow waves-effect waves-dark " href="# " aria-expanded="false "><i class="mdi mdi-table "></i><span class="hide-menu ">Tables</span></a>
+                    <ul aria-expanded="false " class="collapse ">
+                        <li><a href="table-basic.html ">Basic Tables</a></li>
+                        <li><a href="table-layout.html ">Table Layouts</a></li>
+                        <li><a href="table-data-table.html ">Data Tables</a></li>
+                        <li><a href="table-footable.html ">Footable</a></li>
+                        <li><a href="table-jsgrid.html ">Js Grid Table</a></li>
+                        <li><a href="table-responsive.html ">Responsive Table</a></li>
+                        <li><a href="table-bootstrap.html ">Bootstrap Tables</a></li>
+                        <li><a href="table-editable-table.html ">Editable Table</a></li>
                     </ul>
                 </li> -->
-                <!-- <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-map-marker"></i><span class="hide-menu">Maps</span></a>
-                    <ul aria-expanded="false" class="collapse">
-                        <li><a href="map-google.html">Google Maps</a></li>
-                        <li><a href="map-vector.html">Vector Maps</a></li>
+                <!-- <li> <a class="has-arrow waves-effect waves-dark " href="# " aria-expanded="false "><i class="mdi mdi-map-marker "></i><span class="hide-menu ">Maps</span></a>
+                    <ul aria-expanded="false " class="collapse ">
+                        <li><a href="map-google.html ">Google Maps</a></li>
+                        <li><a href="map-vector.html ">Vector Maps</a></li>
                     </ul>
                 </li> -->
             </ul>
@@ -93,4 +94,4 @@
 </aside>
 <!-- ============================================================== -->
 <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-<!-- ============================================================== -->
+<!-- ============================================================== -->Ø
