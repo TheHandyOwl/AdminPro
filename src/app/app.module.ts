@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 
 // Temp
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Routes
 import { APP_ROUTES } from './app.routes';
@@ -31,6 +31,7 @@ import { ServiceModule } from './services/service.module';
     APP_ROUTES,
     PagesModule,
     FormsModule,
+    ReactiveFormsModule,
     ServiceModule
   ],
   bootstrap: [AppComponent]
