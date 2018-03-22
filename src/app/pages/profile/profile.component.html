@@ -1,0 +1,51 @@
+<div class="row animated fadeIn">
+    <div class="col-md-7">
+        <div class="card card-body">
+            <h3 class="box-title m-b-0">Perfil del usuario</h3>
+            <p class="text-muted m-b-30 font-13"> Nombre del usuario </p>
+            <div class="row">
+                <div class="col-sm-12 col-xs-12">
+                    <form ngNativeValidate #form="ngForm" (ngSubmit)="saveValuesToForm( form.value )">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1"> Nombre de usuario </label>
+                            <div class="input-group">
+                                <div class="input-group-addon"> <i class="ti-user"></i> </div>
+                                <input [ngModel]="user.name" name="name" type="text" class="form-control" placeholder="Nombre de usuario" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Direccion email</label>
+                            <div class="input-group">
+                                <div class="input-group-addon"> <i class="ti-email"></i> </div>
+                                <input [ngModel]="user.email" [disabled]="user.google" name="email" type="email" class="form-control" placeholder="Correo del usuario" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success waves-effect waves-light m-r-10"> 
+                          <i class="fa fa-save"></i>
+                          Guardar 
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="card card-body" align="center">
+            <h3 class="box-title m-b-0">Foto del usuario</h3>
+            <p class="text-muted m-b-30 font-13"> {{ user.name }} </p>
+
+            <img *ngIf="!temporalImage" [src]=" user.img | image " class="w150">
+
+            <img *ngIf="temporalImage" [src]=" temporalImage " class="w150">
+
+            <input (change)="imageSelected( $event.target.files[0] )" type="file">
+
+            <br>
+            <br>
+            <button (click)="changeImage()" [disabled]="!uploadImage" type="button" class="btn btn-block btn-success waves-effect waves-light m-r-10"> 
+                <i class="fa fa-save"></i>
+                Actualizar Foto 
+              </button>
+        </div>
+    </div>
+</div>

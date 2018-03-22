@@ -7,12 +7,14 @@ import { PagedidnotfoundComponent } from './pagedidnotfound/pagedidnotfound.comp
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SharedService } from '../services/service.index';
 import { RouterModule } from '@angular/router';
+import { PipesModule } from '../pipes/pipes.module';
 
 
 @NgModule({
   imports: [
     RouterModule,
-    CommonModule
+    CommonModule,
+    PipesModule
   ],
   declarations: [
     BreadcrumbsComponent,
